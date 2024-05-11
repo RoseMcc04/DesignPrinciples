@@ -1,0 +1,124 @@
+INTRODUCTION TO REGEX
+
+- Regex means "regular expression"
+- Pattern in code represented by a sequence of characters
+- Used to perform text search and text replace operations
+- Optimizes the utility and specification with search patterns
+- Search patterns put an emphasis on precision despite the "catch-all" idea
+- Regex can be broken into the following categories:
+	- Character Classes and Capture Groups
+	- Escaped CHaracters
+	- Quantifiers
+	- Alternation
+- Java has a built-in package called java.util.regex;
+
+THE PATTERN CLASS
+
+- Allows us to find a pattern or patterns within a String
+- Pattern.compile() uses two parameters: "String", and Pattern.CAPSQUALITY
+- Examples of regex pattern search include
+	- Pattern.CASE_INSENSITIVE
+	- Pattern.LITERAL
+	- Pattern.UNICODE_CASE
+- To match a string against a pattern, we need the matcher class. 
+
+THE MATCHER CLASS
+
+- You create a Matcher object using a Pattern Object. Example below:
+--------------------------------------------------------------------
+Pattern pattern = Pattern.compile("Rose McCormack");
+Matcher matcher = pattern.matcher("My name is Rose McCormack");
+--------------------------------------------------------------------
+- This will return a matcher object with information about the search
+- After this, we can use the information in various ways
+- find() and matches() are methods that return booleans for finding
+  patterns in two different strings
+- The Matcher class also includes methods to find and replace text, 
+  create search regions, aooebd text, display the matcher's interpreation, 
+  and many more useful and functional tools. 
+
+CHARACTER CLASSES
+
+- One of many primary means of "grouping" characters in a regex pattern
+  without enforcing a necessary order of the characters. 
+- A character class matches a character from a specific set, including
+  pre-defined character classes and custom user-defined sets. 
+
+|-----------------------------------------------------------------------|
+|Character Class|                    Description                        |
+|-----------------------------------------------------------------------|
+|     [abc]     |Includes any of the contained characters               |  
+|    [^abc]     |Excludes all of the contained characters               |  
+|     [a-z]     |Includes any of the contained characters across a range|
+|      .        |Any character except newline                           |
+|      \w       |Any word character (alphanumeric and underscore)       |
+|      \d       |Any digit [0-9]                                        |
+|      \s       |Whitespace (spaces, tabs, line breaks)                 |
+|-----------------------------------------------------------------------|
+
+CAPTURE GROUPS AND ESCAPED CHARACTERS
+
+- Capture groups maintain the order, but allow you to section the pattern
+  and allow for substring searching
+
+|---------------|--------------------------------------------------|
+| Capture Group |Description                                       |
+|---------------|--------------------------------------------------|
+|     (aab)     |Groups tokens together and creates a capture group|
+|---------------|--------------------------------------------------|
+
+- Grouped tokens can be used for extracting a substring. An example is:
+
+-----------------------------------------------------------------------
+Pattern pattern = Pattern.compile("(co)+");
+-----------------------------------------------------------------------
+
+- The "+" quantifier means "occurring 1 or more times"
+- [] denotes character class and () denotes capture group
+- Escape characters start with \ and most common ones are \n and \t
+	- \n --> new line
+	- \t --> tab
+	- \. --> escaped period
+	- \* --> escaped asterisk
+	- \\ --> escaped backslash
+	- \r --> carriage return
+
+QUANTIFIERS
+
+
+- The "+" character in the character class is known as a Quantifier
+- Quantifiers look at preceding tokens and indicate how many matches 
+  you are looking for, trying to match characters as much as possible
+  unless otherwise defined
+- The following table will display a list of quantifiers
+
+|------------|-------------------------------------------|
+| Quantifier | Description                               | 
+|------------|-------------------------------------------|
+|    a*      |0 or more                                  |
+|    a+      |1 or more                                  |
+|    a?      |0 or 1                                     |
+|   a{5}     |Exactly 5                                  |
+|   a{3,}    |Three or more                              |
+|   a{1,3}   |Between 1 and 3                            |
+|    a+?     |Match as few as possible                   |
+|   a{2,}?   |Match as few as possible with a lower bound|
+|------------|-------------------------------------------|
+
+- Patterns are often straightforward since all they do is grab and group
+  the quantified amount of characters together when found
+- We will look at an example below:
+------------------------------------------------------
+Pattern pattern = Pattern.compile("a*b");
+------------------------------------------------------
+- This example will find any pattern of a's and b's within a string of text
+
+ALTERNATION
+
+- Alternation is the regex phrase for saying OR
+- ab | cd
+- The pattern will search for any text that matches either the alternated pattern
+  and only return if neither is found. Otherwise, this pattern will group either
+  match in the search results regardless of which pattern matched.
+- You can also implicitly use alternation in character classes ([A-Z])
+
