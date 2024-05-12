@@ -44,9 +44,9 @@ CHARACTER CLASSES
 - A character class matches a character from a specific set, including
   pre-defined character classes and custom user-defined sets. 
 
-|-----------------------------------------------------------------------|
+|---------------|-------------------------------------------------------|
 |Character Class|                    Description                        |
-|-----------------------------------------------------------------------|
+|---------------|-------------------------------------------------------|
 |     [abc]     |Includes any of the contained characters               |  
 |    [^abc]     |Excludes all of the contained characters               |  
 |     [a-z]     |Includes any of the contained characters across a range|
@@ -54,7 +54,7 @@ CHARACTER CLASSES
 |      \w       |Any word character (alphanumeric and underscore)       |
 |      \d       |Any digit [0-9]                                        |
 |      \s       |Whitespace (spaces, tabs, line breaks)                 |
-|-----------------------------------------------------------------------|
+|---------------|-------------------------------------------------------|
 
 CAPTURE GROUPS AND ESCAPED CHARACTERS
 
