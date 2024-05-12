@@ -1,0 +1,116 @@
+INTRODUCTION TO JUNIT
+
+- JUnit testing operates in a Test Driven Development Setting, or TDD, usually utilized 
+  specifically in "test-first" programming, specifically Javas in this case due to the
+  incorporation of JUnit. 
+- "Red-Green-Refactor" 
+- JUnit is a testing framework for Java that tests the functionality of an application to 
+  ensure it runs as expected. Units are single entities like classes and methods. 
+- JUnit tests are usually written to decrease the amount of time debugging and to reduce
+  stress for the programmers. This will allow the code to become maintainable in the future
+  and more friendly for teams of programmers. 
+
+JUNIT CLASSES AND METHODS
+
+- import org.junit.Before; --> @Before
+- import org.junit.Test; --> @Test
+- import org.junit.After; --> @After
+- import org.junit.Ignore; --> @Ignore
+- import static org.junit.Assert.*; --> used for functionality of tests
+
+@TEST-ING, @TEST-ING, 1 2 3
+
+- @Test will be the bulk of most JUnit testing. Many things need to be checked or verified
+  and this occurs under the @Test annotation. 
+- These methods will always run unless annotated as @Ignore which tells the compiler to 
+  skip over that particular method. They do not need to be called as they are already called
+  with the compiler. 
+- There will be a test method for every class object and class object in the program. 
+- The word coverage may arise at some point which in the case of JUnit just means "test 
+  coverage". The primary question is that how much of the code is tested or if the test 
+  methods touch the code. Good programs have full coverage. 
+- When a test passes, the color is green. However, the test is red when it fails. JUnit makes
+  it a standard to use the colors green and red to determine whether a test fully passes or
+  not. This is why we have the mantra "Red-Green-Refactor"
+- Extra coding practice should be done with practice. Also, the Java API is a good resource. 
+
+@TEST METHODS AND ASSERTS
+
+|---------------------------------------------|----------------------------------|-
+|            Assert Methods                   |             Description          |      
+|---------------------------------------------|----------------------------------|
+|assertEquals(expected, actual)               |Checks if two values are equal    |
+|assertNotEquals(expected, actual)            |Checks if two values are not equal|
+|assertTrue(boolean condition)                |Checks if a condition is true     |
+|assertFalse(booleanCondition)                |Checks if a condition is false    |
+|assertNotNull(Object object)                 |Checks if an object isn't null    |
+|assertNull(Object object)                    |Checks if an object is null       |
+|assertArrayEquals(expectedArray, actualArray)|Checks if two arrays are equal    |
+|---------------------------------------------|----------------------------------|
+
+- All assert methods have a return type of void
+- When called, each "assert" is considered a test case by the compiler and any given assert
+  can pass or fail. A @Test method can only pass if all test cases inside pass. Otherwise, 
+  the test will be considered failed. 
+- Three import that will always be used:
+	- import static org.junit.Assert.fail;
+	- import static org.hamcrest.MatcherAssert.assertThat;
+	- import static org.hamcrest.CoreMatchers.equalTo;
+
+@BEFORE WE GO FURTHER
+
+- @Before annotation accompanies the @Test methods and they will run before @Test methods
+- Used if multiple test methods share a similarly created object or set of variables. Placing
+  these insie of the @Before method wnsures the objects are freshly created and have the same
+  starting attributes upon execution. This means we do not need to create many variables in
+  test bodies.
+
+THE @AFTER-MATH
+
+- @After annotation acts just like @Before, but will run after each test method. This is
+  used for cleanup after a JUnit test. 
+- @After is used for cleaning up variables and objects along with freeing memory. This is
+  perfect for closing files, environments, arrays, etc.
+- Cleaning up should only be used for after tests
+
+RUNNING WITH THE @SUITE-S
+
+- After getting all of the @Before, @Test, and @After method all put togehter in a neat 
+  class, we can add multiple JUnits to a test suite. 
+- A test suite is a way to bundle JUnit test classes and run them together. The @RunWith and
+  @Suite annotations are used to accomplish this. An example will be provided below.
+------------------------------------------
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+// List of test classes to bundle together
+})
+
+public class MyTestSuite {
+
+}
+------------------------------------------
+The actual test suite class will be imported wuth the following code:
+------------------------------------------------------------------------
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
+import org.junit.notification.Failure;
+
+public Class TestSuiteRunner {
+	public static void main(String[] args) {
+		Result result = JUnitCore.runClasses(MyTestSuite.class);
+
+		for (Failure failure: result.getFailures()) {
+			System.out.println(Failure.toString());
+		}
+		System.out.println(result.wasSuccessful());
+	}
+}
+------------------------------------------------------------------------
+
+- Runner class will typically look the same and can also be used to run multiple test suites
+  depending on which test classes are bundled. Result and Failure imports are ways to gather
+  and print the result of test cases within bundled classes. 
+- Without a test suite, multiple test classes that interact with the environment would need 
+  to recreate both the environment and objects within the environment between test classes. 
+- A test suite is just another way to apply the @Before and @After methodology to testing, 
+  but on a larger class-based scale. 
