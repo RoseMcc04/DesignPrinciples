@@ -1,0 +1,28 @@
+When we design for the software components, or architecture, we ask questions like:
+	- How will we organize our software?
+	- How will the parts talk with each other?
+	- How will we move and store the data?
+
+DESIGNING FOR CHANGE (DFC)
+
+- Developing software over time can make the system more complex which calls for design
+  guidelines/tools to assist is in developing out creation. Some factors that influence a 
+  system's capability to change include:
+	- Each system part should have a clear purpose
+	- The things most likely to change should be separate from the rest of the system
+	- Classes should have a clear 
+	- Our system should use standard design patterns and practices
+
+SOME GENERAL RULES
+
+*YAGNI: You Aren't Going to Need It:
+- System design for only features currently being worked on
+
+*KISS: Keep It Simple Silly:
+- Directs developers to keep system designs as simple as possible
+
+*DRY: Don't Repeat Yourself:
+- Look for places in a software system where the same or similar information is being
+  reiterated multiple times
+
+
