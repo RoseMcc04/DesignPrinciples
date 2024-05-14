@@ -1,0 +1,56 @@
+WHAT IS SOLID?
+
+- SOLID is an acronym that stands for
+	- Single Responsobility Principle --> Classes should only have one reason to change
+	- Open-Closed Principle --> We should be able to add functionality through the
+	  creation of new classes rather than change existing classes.
+	- Liskov Substitution Principle --> We should be able to replace a parent class with
+	  its subclass without breaking our codebase.
+	- Interface Segregation Principle --> Interfaces should only contain attributes and
+	  methods used by all of their subclasses.
+	- Dependency Inversion Principle --> Classes should interact with interfaces
+
+SINGLE RESPONSIBILITY PRINCIPLE (SRP)
+
+- Modules should only have one reason to change
+- Reasons to change include business decisions, database changes, or adjustments to UX/UI
+- When multiple factors impact a class, the class violates the SRP
+- To fix this, we should break up this class into smaller classes. This reduces complexity of
+  our classes and the number of times each will have to change
+
+OPEN-CLOSED PRINCIPLE (OCP)
+
+- States that software classes should be open for extension but closed for modification
+- Means that we should be able to add functionality by making new classes and without 
+  changing existing ones
+- Along with SRP, we want to focus on separating our classes based on independent behaviors
+
+LISKOV SUBSTITUTION PRINCIPLE (LSP)
+
+- States that a parent class should be able to be substituted with its subclass
+- There should be no special behavior that we have to do when dealing with particular 
+  subclasses
+- Allows our system to be define as many interchangeable parts
+
+INTERFACE SEGREGATION PRINCIPLE (ISP)
+
+- With lots of object-oriented code, we probably have implemented methods we do not actually
+  plan on using. 
+- We add these methods to make the class conform to an interface, a description of the
+  inherited properties and methods that need to be implemented by a subclass, that we use
+- If not all subclasses use a specific method, we will have violated the ISP. We instead 
+  should define new interfaces that properly abstract the different types of subclasses
+
+DEPENDENCY INVERSION PRINCIPLES (DIP)
+
+- While the LSP has us design classes that can be substituted for their superclass in client
+  code, the DIP has us actually write our client in terms of those superclasses
+- States that systems are the most flexible when dependencies (classes calling other
+  classes) refer to abstractions rather than concreate classes
+- Ensures that we define appropriate high-level interfaces and write code that is generic
+  to those interfaces, ehnancing our use of the OCP as well as the ISP
+
+SUMMARY
+
+- Overall, these principles allow a team to have an easier time programming and debugging, 
+  along with making our code more efficient and have good health for our software system
