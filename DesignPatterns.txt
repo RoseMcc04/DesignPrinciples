@@ -1,0 +1,71 @@
+WHAT ARE DESIGN PATTERNS?
+
+- They are reusable solutions to problems that commonly occur during software development
+  having to do with the way we organize our components, the pieces of code that make up the
+  application
+- Design patterns can be thought of as a set of ways to structure system components and how
+  they communicate with each other
+
+WHY DO WE NEED DESIGN PATTERNS?
+
+- Software is continuously worked on, even after release. Most development time is spent on
+  modifying or maintaining a released software system. 
+- Changes in a software system can result from:
+	- Adding new code
+	- Changing existing code to work with the new code
+	- Deleting code
+- Over time, changes can cause our systems to become more complicated, allowing for the need
+  of design patterns
+- They allow us to engineer our systems to accommodate more change
+- A pattern is chosen to be implemented based on the problem being solved
+- As we used design patterns more, we develop our ability to quickly identify the pattern that
+  should be appplied to solve the problem seen in our software system
+- We will also eventually be able to better anticipate where certain problems will occur
+
+TYPES OF DESIGN PATTERNS
+
+- There are three major types of design patterns for Object-Oriented systems, however, more
+  are often available in much larger projects or industry
+	- Creational patterns --> hide logic needed to create an object from clients that 
+	  need to use the object
+	- Structural patterns --> provide ways to combine objects into larger structures
+	- Behavioral patterns --> define clear ways for objects to interact with each other
+
+CREATIONAL PATTERNS
+
+- Solve problems that involve hiding the logic required to make objects from components that
+  use the objects
+- An example would be a class in a software system that interacts with a database
+	- When we connect to the database, we need to input credentials and configurations
+	- Does the setup process need to happen each time the database is accessed by an 
+	  object?
+	- The Creational Pattern used in this situation would be the Singleton pattern, a 
+	  pattern that is used as a way to access an application's database by allowing the
+	  codebase widespread access to said database through a singular instance of an 
+	  object.
+
+STRUCTURAL PATTERNS
+
+- All about composing classes and objects into larger structures
+- An example would involve creating a heirarchy of objects in which there are many variants
+	- Our Rectangle might have RedRectangles, BlueRecTangles, RoundRectangles, and 
+	  RoundedRectangles and many other types.
+	- Each time we add a new feature of the Rectangle, the number of classes needed to
+	  represent every feature of a Rectangle increases combinatoricaly, not linearly
+	- Instead of having each variant be represented by a class, we need to create classes
+	  out of types of these variants and have our base object use these as instance 
+	  variables
+	- A specific example of the Bridge pattern. It seeks to replace some of the 
+	  responsibility of inheritance (many subclasses) with object composition (making
+	  objects out of other types of objects)
+	- We seek to take a dimension of an object causing the number of subclasses to grow
+	  turn the dimension into a class, and make an instance of that class an attribute
+	  the base class of an object.
+
+BEHAVIORAL PATTERNS
+
+- Patterns that do not fit in their Creational or Structural Patterns
+- Described as defininf ways for our objects to interact with each other in an extensible
+  way
+- An example is the Observer pattern. It allows us to add new entities listening in on these
+  events and create new events that these objects can listen to
