@@ -1,0 +1,53 @@
+WHAT IS THE MODEL VIEW CONTROLLER?
+
+- Organizational design pattern used for applications that need:
+	- To move around data throughout the application
+	- To display the visual and interactive elements to the users of the application
+	- A means of having the user's actions change the application data
+- We will use designing a website that displays a fun fact with a button click as an 
+  example
+
+THE MODEL
+
+- Made up of the data storage, as well as any classes that represent that data as it moves
+  around the application
+- Data is often stored outside the app in a database or files. It can be storied in different
+  formats, but we often read data from storage into a representational object
+- Objects should be extremely simple and have very little behavior outside of allowing full
+  access to their data
+- Within our "fun fact" site, our model might consist of the storage of our facts, as well as
+  the classes that represent them
+
+THE VIEW
+
+- This component is the classes that describe how our applications will be presented to the
+  user
+- Examples include React components or HTML elements in a web app or XML files in an Android
+  app
+- In our "fun fact" site, this would be the code that displays the button to click and the
+  currently visible fact
+
+THE CONTROLLER
+
+- Brain of our application since the Model and the View only represent presentational and
+  data objects
+- Defines the behaviors that our system will accomplish using the Model and View
+- Responsible for receiving events (clicks, submitted forms, typing) passed in from the View
+  and processing them to make meaningful responses
+- Will interact with the Model, making queries or representing data as appropriate to make
+  these responses happen
+
+ADVANTAGES AND DISADVANTAGES OF USING MVC
+
+- Primary advantage is the separation of the data representation, logical, and presentational
+  layers. This allows them to be highly tied together causing independent modification. 
+  Changing the Model should not require major changes to View and Controller
+- Separating Controller from View allows us various different mediums of viewing the 
+  application. This greatly reduces the amount of work needed to port our application to 
+  different mediums
+- Primary disadvantage is that it can introduce unneeded complexity to an application. Having
+  multiple components and structure is uneccessary for simpler applications
+- A decent guideline is that if our application requires multiple people for development, 
+  having a pattern such as MVC probably would be helpful
+
+
