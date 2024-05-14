@@ -1,0 +1,62 @@
+OBJECT-ORIENTED PROGRAMMING PARADIGM
+
+- Components of software are defined as objects, along with having blocks, functions, and
+  files. 
+- Primary principles of OOP are: Encapsulation, Abstraction, Inheritance, and Polymorphism
+
+UML: DESCRIBING AN OBJECT AND ITS RELATIONSHIPS
+
+- The name of classes, methods, and attributes should be able to convey the purpose of an
+  object. Using high-level diagrams allows us to figure out how the components of a software
+  system work together.
+- The UML base class diagram was designed to documents objects by the following order within
+  a block: Class Name, Attributes, and then Methods
+
+|------------------------|
+|      Bank Account      |
+|------------------------|
+|                        |
+|-balance: double        |
+|------------------------|
+|                        |
+|+BankAccount()          |
+|+BankAccount(double)    |
+|+getBalance() : double  |
+|+deposit(double) : void |
+|+withdraw(double) : void|
+|+toString() : String    |
+|------------------------|
+
+- These diagrams convey the definition of an object along with how its interactions will work
+
+SYSTEM DIAGRAMS AND FLOWCHARTS
+
+- Just like normal UML diagrams, we often look at flowcharts and system diagrams that 
+  illustrate how a software system works.
+ 
+**Images of system diagrams along with other diagrams discussed in this text file will 
+  be added separately to the repository**
+
+DESIGNING OOP CLASSES
+
+- Abstraction	
+	- Hiding low-level details and presenting an idea at a higher level
+	- When we design an object's methods that will be used by other objects, we want to
+	  abstract what the methods will do at the highest level possible, allowing us to
+	  focus on the bigger picture of the class.
+- Encapsulation
+	- Highly related to abstraction
+	- Means that an object should manage its internal state, exposing only behaviors
+	  to be used by other objects
+	- Only high level behaviors should be accessed by other objects and access to internal
+	  attributes should be restricted
+- Inheritance
+	- Means that an object inherits characteristics of its parent object
+	- Allows us to implement behaviors shared by subclasses in the parent object, and 
+	  leave the implementation of behavioral differences to a child object
+- Polymorphism
+	- Using inheritance-defined classes, we can reuse the aspects of objects that stay
+	  the same. This allows us to define differences between sub-classes. 
+	- Allows a class to overwrite the inherited mehavior of its superclass
+	- Allows the behavior of particular superclass methods to be left up to child class
+	  implementation
