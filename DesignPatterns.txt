@@ -69,3 +69,5 @@ BEHAVIORAL PATTERNS
   way
 - An example is the Observer pattern. It allows us to add new entities listening in on these
   events and create new events that these objects can listen to
+
+Concludes patterns
