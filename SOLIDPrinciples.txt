@@ -1,7 +1,7 @@
 WHAT IS SOLID?
 
 - SOLID is an acronym that stands for
-	- Single Responsobility Principle --> Classes should only have one reason to change
+	- Single Responsibility Principle --> Classes should only have one reason to change
 	- Open-Closed Principle --> We should be able to add functionality through the
 	  creation of new classes rather than change existing classes.
 	- Liskov Substitution Principle --> We should be able to replace a parent class with
